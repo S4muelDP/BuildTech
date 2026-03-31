@@ -1,0 +1,352 @@
+/* ============================================
+   BUILDTECH - Inicio Page Styles
+   ============================================ */
+
+/* ---- Fav Badge ---- */
+.header__fav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header__fav-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.6rem;
+  font-weight: var(--fw-bold);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(135deg, 
+      rgba(180, 60, 20, 0.4) 0%, 
+      rgba(120, 40, 10, 0.6) 30%,
+      rgba(30, 15, 5, 0.85) 60%,
+      rgba(0, 0, 0, 0.95) 100%
+    ),
+    linear-gradient(45deg, #1a0a02, #2d1206, #0d0502);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 30% 50%, rgba(255, 120, 40, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(200, 60, 20, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--color-bg), transparent);
+  z-index: 2;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: var(--fw-black);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.15;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+  animation: heroFadeIn 1s ease-out;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  animation: heroFadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- COMPONENTS CAROUSEL ---- */
+.components {
+  padding: 80px 0;
+}
+
+.components__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.components__nav {
+  display: flex;
+  gap: 12px;
+}
+
+.components__arrow {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-black);
+  background: transparent;
+  color: var(--color-black);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.components__arrow:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.components__carousel {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.components__carousel .product-card {
+  min-width: calc(33.333% - 16px);
+  flex-shrink: 0;
+}
+
+/* ---- HELP / CTA ---- */
+.help {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.help::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.help__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.help__text {
+  flex: 1;
+  color: var(--color-white);
+}
+
+.help__title {
+  font-size: 2.8rem;
+  font-weight: var(--fw-black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.help__description {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 500px;
+  letter-spacing: 0.5px;
+}
+
+.help__image {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help__chip-icon {
+  width: 200px;
+  height: 200px;
+  opacity: 0.6;
+  animation: chipFloat 4s ease-in-out infinite;
+}
+
+@keyframes chipFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.help__chip-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- USER SETUPS ---- */
+.setups {
+  padding: 80px 0;
+}
+
+.setups .section-title {
+  margin-bottom: 40px;
+  font-size: 1.6rem;
+}
+
+.setups__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 16px;
+  height: 416px;
+}
+
+.setups__card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.setups__card-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.setups__card:hover .setups__card-img {
+  transform: scale(1.05);
+}
+
+.setups__card--main {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.setups__card--main .setups__card-img {
+  flex: 1;
+}
+
+.setups__card-content {
+  background: var(--color-white);
+  padding: 20px 24px;
+}
+
+.setups__card-badge {
+  font-size: 1rem;
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.setups__card-user {
+  font-size: 0.75rem;
+  color: var(--color-gray-mid);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 6px 0;
+}
+
+.setups__card-desc {
+  font-size: 0.8rem;
+  color: var(--color-gray-dark);
+  margin-bottom: 8px;
+}
+
+.setups__card-link {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.setups__card--sm {
+  position: relative;
+}
+
+.setups__card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: var(--color-white);
+}
+
+.setups__card-overlay span {
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.setups__card-img--brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setups__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-white);
+}
+
+.setups__brand span {
+  font-size: 0.9rem;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+.setups__card--bottom-left,
+.setups__card--bottom-right {
+  /* These fill the remaining grid cells */
+}

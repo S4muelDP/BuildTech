@@ -1,0 +1,212 @@
+/* ============================================
+   BUILDTECH - Contacto Page Styles
+   ============================================ */
+
+.contact {
+  padding: 60px 0;
+  min-height: calc(100vh - var(--header-height) - 200px);
+}
+
+/* ---- Hero ---- */
+.contact__hero {
+  margin-bottom: 50px;
+}
+
+.contact__title {
+  font-size: 3.5rem;
+  font-weight: var(--fw-black);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.contact__subtitle {
+  font-size: 0.75rem;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-gray-dark);
+  line-height: 1.6;
+}
+
+/* ---- Layout ---- */
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ---- Form ---- */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__label {
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-gray-dark);
+}
+
+.contact__input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  font-family: var(--font-main);
+  background-color: var(--color-gray-input);
+  border: 2px solid transparent;
+  color: var(--color-black);
+  transition: all 0.25s ease;
+}
+
+.contact__input:focus {
+  border-color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.contact__input.error {
+  border-color: #d32f2f;
+}
+
+.contact__select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__error {
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+  color: #d32f2f;
+  letter-spacing: 0.5px;
+  min-height: 16px;
+}
+
+.contact__submit {
+  align-self: flex-start;
+  min-width: 200px;
+  margin-top: 8px;
+}
+
+/* ---- Sidebar ---- */
+.contact__sidebar {
+  padding-top: 10px;
+}
+
+.contact__info-section {
+  margin-bottom: 40px;
+}
+
+.contact__info-title {
+  font-size: 1.1rem;
+  font-weight: var(--fw-extrabold);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Location Items */
+.contact__location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.contact__location-city {
+  font-size: 0.8rem;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gray-dark);
+}
+
+.contact__location-address {
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.5px;
+}
+
+/* Social Icons */
+.contact__social {
+  display: flex;
+  gap: 16px;
+}
+
+.contact__social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  transition: all 0.3s ease;
+}
+
+.contact__social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact__social-icon:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+/* ---- Success State ---- */
+.contact__success {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.contact__success-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contact__success-title {
+  font-size: 1.6rem;
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.contact__success-text {
+  font-size: 0.9rem;
+  color: var(--color-gray-mid);
+  margin-bottom: 32px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

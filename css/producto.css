@@ -1,0 +1,249 @@
+/* ============================================
+   BUILDTECH - Producto Detail Page Styles
+   ============================================ */
+
+/* ---- Hero Section ---- */
+.product-detail {
+  padding: 60px 0 40px;
+}
+
+.product-detail__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+/* ---- Product Image ---- */
+.product-detail__image-wrapper {
+  background-color: var(--color-gray-light);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.product-detail__image-wrapper img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-detail__image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* ---- Product Info ---- */
+.product-detail__info {
+  padding-top: 20px;
+}
+
+.product-detail__category {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-gray-mid);
+  margin-bottom: 12px;
+}
+
+.product-detail__name {
+  font-size: 2.8rem;
+  font-weight: var(--fw-black);
+  text-transform: none;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.product-detail__price {
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.product-detail__desc {
+  font-size: 0.9rem;
+  color: var(--color-gray-dark);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 480px;
+  letter-spacing: 0.3px;
+}
+
+/* ---- Specs List ---- */
+.product-detail__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 36px;
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.product-detail__spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.product-detail__spec-label {
+  font-size: 0.8rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gray-mid);
+}
+
+.product-detail__spec-value {
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.5px;
+}
+
+/* ---- Add to Favorites Button ---- */
+.product-detail__fav-btn {
+  width: 100%;
+  max-width: 360px;
+  padding: 16px 36px;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+}
+
+.product-detail__fav-btn.added {
+  background-color: var(--color-gray-dark);
+  border-color: var(--color-gray-dark);
+}
+
+/* ---- Scroll Indicator ---- */
+.product-detail__scroll-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  color: var(--color-gray-mid);
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ---- Tabs Section ---- */
+.product-detail__tabs-section {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 60px;
+  padding: 60px 0;
+  border-top: 1px solid var(--color-gray-light);
+  min-height: 300px;
+}
+
+.product-detail__tabs-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-detail__tab {
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 12px 16px;
+  cursor: pointer;
+  color: var(--color-gray-mid);
+  transition: all 0.25s ease;
+  position: relative;
+  background: none;
+  border: none;
+  font-family: var(--font-main);
+}
+
+.product-detail__tab:hover {
+  color: var(--color-black);
+  background-color: rgba(0,0,0,0.03);
+}
+
+.product-detail__tab.active {
+  color: var(--color-black);
+  font-weight: var(--fw-extrabold);
+  background-color: rgba(0,0,0,0.05);
+}
+
+.product-detail__tab.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-black);
+}
+
+/* ---- Tab Content ---- */
+.product-detail__tab-panel {
+  display: none;
+}
+
+.product-detail__tab-panel.active {
+  display: block;
+  animation: tabFadeIn 0.35s ease;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-detail__tab-title {
+  font-size: 2rem;
+  font-weight: var(--fw-black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.product-detail__tab-text {
+  font-size: 0.92rem;
+  color: var(--color-gray-dark);
+  line-height: 1.8;
+  max-width: 600px;
+  letter-spacing: 0.3px;
+}
+
+/* ---- Spec Table (in tab) ---- */
+.product-detail__spec-table {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.product-detail__spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.product-detail__spec-row-label {
+  font-size: 0.8rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gray-mid);
+}
+
+.product-detail__spec-row-value {
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+}

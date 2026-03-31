@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BuildTech - Detalle de producto. Información técnica y especificaciones de componentes de PC.">
+  <title>BuildTech - Producto</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/producto.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">BUILDTECH</a>
+      <nav class="header__nav" id="main-nav">
+        <a href="index.html" class="header__nav-link">HOME</a>
+        <a href="catalogo.html" class="header__nav-link active">CATÁLOGO</a>
+        <a href="favoritos.html" class="header__nav-link">FAVORITOS</a>
+        <a href="contacto.html" class="header__nav-link">CONTACTO</a>
+        <a href="#" class="header__nav-link">BLOG</a>
+      </nav>
+      <div class="header__actions">
+        <a href="favoritos.html" class="header__fav-link" aria-label="Ver favoritos">
+          <svg class="header__fav-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="header__fav-badge" id="fav-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== PRODUCT DETAIL ========== -->
+  <main class="product-detail" id="product-detail">
+    <div class="container">
+      <!-- Hero Product Section -->
+      <section class="product-detail__hero" id="product-hero">
+        <div class="product-detail__image-wrapper fade-in" id="product-image-wrapper">
+          <img id="product-image" src="" alt="" data-product-name="" onerror="handleImageError(this)">
+        </div>
+        <div class="product-detail__info fade-in">
+          <span class="product-detail__category" id="product-category">PROCESADOR</span>
+          <h1 class="product-detail__name" id="product-name">Intel Core Ultra 9</h1>
+          <p class="product-detail__price" id="product-price">$2,499.00 Aprox</p>
+          <p class="product-detail__desc" id="product-desc">
+            Alto rendimiento para gaming y productividad avanzada. Arquitectura con IA incorporada.
+          </p>
+
+          <!-- Specs -->
+          <div class="product-detail__specs" id="product-specs">
+            <div class="product-detail__spec-item">
+              <span class="product-detail__spec-label">Núcleos</span>
+              <span class="product-detail__spec-value" id="spec-cores">24 Núcleos</span>
+            </div>
+            <div class="product-detail__spec-item">
+              <span class="product-detail__spec-label">Hilos</span>
+              <span class="product-detail__spec-value" id="spec-threads">12 Hilos</span>
+            </div>
+            <div class="product-detail__spec-item">
+              <span class="product-detail__spec-label">Velocidad de reloj</span>
+              <span class="product-detail__spec-value" id="spec-clock">3.7 Ghz</span>
+            </div>
+          </div>
+
+          <button class="btn btn--primary product-detail__fav-btn" id="add-fav-btn">
+            AGREGAR A FAVORITOS
+          </button>
+        </div>
+      </section>
+
+      <!-- Scroll Indicator -->
+      <div class="product-detail__scroll-indicator">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="2" width="12" height="20" rx="6" />
+          <line x1="12" y1="6" x2="12" y2="10" />
+        </svg>
+      </div>
+
+      <!-- Tabs Section -->
+      <section class="product-detail__tabs-section fade-in" id="tabs-section">
+        <div class="product-detail__tabs-sidebar">
+          <button class="product-detail__tab active" data-tab="especificaciones">ESPECIFICACIONES</button>
+          <button class="product-detail__tab" data-tab="descripcion">DESCRIPCIÓN</button>
+          <button class="product-detail__tab" data-tab="info-tecnica">INFORMACIÓN TÉCNICA</button>
+        </div>
+        <div class="product-detail__tabs-content">
+          <!-- Especificaciones -->
+          <div class="product-detail__tab-panel active" id="panel-especificaciones">
+            <h2 class="product-detail__tab-title">ESPECIFICACIONES</h2>
+            <div class="product-detail__spec-table" id="spec-table">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+          <!-- Descripción -->
+          <div class="product-detail__tab-panel" id="panel-descripcion">
+            <h2 class="product-detail__tab-title">DESCRIPCIÓN</h2>
+            <p class="product-detail__tab-text" id="tab-description">
+              Descripción completa del producto.
+            </p>
+          </div>
+          <!-- Info Técnica -->
+          <div class="product-detail__tab-panel" id="panel-info-tecnica">
+            <h2 class="product-detail__tab-title">INFORMACIÓN TÉCNICA</h2>
+            <p class="product-detail__tab-text" id="tab-info-tecnica">
+              Información técnica detallada del componente.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__brand">
+        <span class="footer__logo">BUILDTECH</span>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">HOME</h4>
+        <a href="catalogo.html" class="footer__link">Catálogo</a>
+        <a href="favoritos.html" class="footer__link">Favoritos</a>
+        <a href="contacto.html" class="footer__link">Contacto</a>
+        <a href="#" class="footer__link">Blog</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">DESARROLLADORES</h4>
+        <span class="footer__link">Junior Mosquera</span>
+        <span class="footer__link">Samuel</span>
+        <span class="footer__link">Daniel</span>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">TECNOLOGIAS</h4>
+        <span class="footer__link">HTML5</span>
+        <span class="footer__link">Angular</span>
+        <span class="footer__link">LocalStorage</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/producto.js"></script>
+</body>
+</html>

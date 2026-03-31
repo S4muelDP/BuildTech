@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BuildTech - Contáctanos. Estamos para ayudarte a elegir los mejores componentes para tu PC.">
+  <title>BuildTech - Contacto</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">BUILDTECH</a>
+      <nav class="header__nav" id="main-nav">
+        <a href="index.html" class="header__nav-link">HOME</a>
+        <a href="catalogo.html" class="header__nav-link">CATÁLOGO</a>
+        <a href="favoritos.html" class="header__nav-link">FAVORITOS</a>
+        <a href="contacto.html" class="header__nav-link active">CONTACTO</a>
+        <a href="#" class="header__nav-link">BLOG</a>
+      </nav>
+      <div class="header__actions">
+        <a href="favoritos.html" class="header__fav-link" aria-label="Ver favoritos">
+          <svg class="header__fav-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="header__fav-badge" id="fav-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== CONTACT ========== -->
+  <main class="contact" id="contact">
+    <div class="container">
+      <!-- Hero -->
+      <div class="contact__hero fade-in">
+        <h1 class="contact__title">CONTÁCTANOS</h1>
+        <p class="contact__subtitle">ESTAMOS PARA AYUDARTE, DEJANOS TUS DATOS Y TE CONTÁCTAREMOS.</p>
+      </div>
+
+      <!-- Content -->
+      <div class="contact__layout">
+        <!-- Form -->
+        <form class="contact__form fade-in" id="contact-form" novalidate>
+          <div class="contact__field">
+            <label for="contact-name" class="contact__label">NOMBRE</label>
+            <input type="text" id="contact-name" class="contact__input" placeholder="" required>
+            <span class="contact__error" id="error-name"></span>
+          </div>
+
+          <div class="contact__field">
+            <label for="contact-email" class="contact__label">EMAIL</label>
+            <input type="email" id="contact-email" class="contact__input" placeholder="" required>
+            <span class="contact__error" id="error-email"></span>
+          </div>
+
+          <div class="contact__field">
+            <label for="contact-subject" class="contact__label">ASUNTO</label>
+            <select id="contact-subject" class="contact__input contact__select" required>
+              <option value="" disabled selected></option>
+              <option value="consulta">Consulta General</option>
+              <option value="soporte">Soporte Técnico</option>
+              <option value="cotizacion">Cotización</option>
+              <option value="sugerencia">Sugerencia</option>
+              <option value="otro">Otro</option>
+            </select>
+            <span class="contact__error" id="error-subject"></span>
+          </div>
+
+          <div class="contact__field">
+            <label for="contact-message" class="contact__label">MENSAJE</label>
+            <textarea id="contact-message" class="contact__input contact__textarea" rows="5" required></textarea>
+            <span class="contact__error" id="error-message"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary contact__submit" id="contact-submit">ENVIAR</button>
+        </form>
+
+        <!-- Sidebar Info -->
+        <aside class="contact__sidebar fade-in">
+          <!-- Visit Us -->
+          <div class="contact__info-section">
+            <h3 class="contact__info-title">VISÍTANOS</h3>
+            <div class="contact__location">
+              <span class="contact__location-city">MEDELLIN</span>
+              <span class="contact__location-address">CR 68 C</span>
+            </div>
+            <div class="contact__location">
+              <span class="contact__location-city">BOGOTÁ</span>
+              <span class="contact__location-address">Av Principal</span>
+            </div>
+            <div class="contact__location">
+              <span class="contact__location-city">SANTA MARTA</span>
+              <span class="contact__location-address">Edif Maestre</span>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="contact__info-section">
+            <h3 class="contact__info-title">SIGUENOS EN REDES</h3>
+            <div class="contact__social">
+              <a href="#" class="contact__social-icon" aria-label="Compartir">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="5" r="3"/>
+                  <circle cx="6" cy="12" r="3"/>
+                  <circle cx="18" cy="19" r="3"/>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                </svg>
+              </a>
+              <a href="#" class="contact__social-icon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="5"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="#" class="contact__social-icon" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="10 8 16 12 10 16 10 8"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__brand">
+        <span class="footer__logo">BUILDTECH</span>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">HOME</h4>
+        <a href="catalogo.html" class="footer__link">Catálogo</a>
+        <a href="favoritos.html" class="footer__link">Favoritos</a>
+        <a href="contacto.html" class="footer__link">Contacto</a>
+        <a href="#" class="footer__link">Blog</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">DESARROLLADORES</h4>
+        <span class="footer__link">Junior Mosquera</span>
+        <span class="footer__link">Samuel</span>
+        <span class="footer__link">Daniel</span>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">TECNOLOGIAS</h4>
+        <span class="footer__link">HTML5</span>
+        <span class="footer__link">Angular</span>
+        <span class="footer__link">LocalStorage</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>

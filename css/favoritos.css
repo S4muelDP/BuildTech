@@ -1,0 +1,171 @@
+/* ============================================
+   BUILDTECH - Favoritos Page Styles
+   ============================================ */
+
+.favorites {
+  padding: 60px 0;
+  min-height: calc(100vh - var(--header-height) - 200px);
+}
+
+.favorites__title {
+  font-size: 3.2rem;
+  font-weight: var(--fw-black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+/* ---- Grid ---- */
+.favorites__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ---- Favorite Card ---- */
+.fav-card {
+  background-color: var(--color-white);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fav-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.fav-card__image-wrapper {
+  background-color: var(--color-gray-light);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.fav-card__image-wrapper img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.fav-card:hover .fav-card__image-wrapper img {
+  transform: scale(1.06);
+}
+
+.fav-card__info {
+  padding: 20px;
+}
+
+.fav-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.fav-card__name {
+  font-size: 0.9rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.fav-card__price {
+  font-size: 0.9rem;
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+.fav-card__category {
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gray-mid);
+  margin-bottom: 16px;
+}
+
+.fav-card__remove-btn {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.72rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 2px solid var(--color-black);
+  cursor: pointer;
+  font-family: var(--font-main);
+  transition: all 0.3s ease;
+}
+
+.fav-card__remove-btn:hover {
+  background-color: #d32f2f;
+  border-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+/* ---- Empty State ---- */
+.favorites__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.favorites__empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.25;
+}
+
+.favorites__empty-title {
+  font-size: 1.4rem;
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  color: var(--color-gray-dark);
+}
+
+.favorites__empty-text {
+  font-size: 0.9rem;
+  color: var(--color-gray-mid);
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Card Remove Animation ---- */
+.fav-card--removing {
+  animation: cardRemove 0.4s ease forwards;
+}
+
+@keyframes cardRemove {
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+}
+
+/* ---- Card Enter Animation ---- */
+.fav-card--enter {
+  animation: cardEnter 0.4s ease both;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

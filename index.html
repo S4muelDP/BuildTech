@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BuildTech - Elige los mejores componentes para armar tu PC. Procesadores, boards, memorias RAM y más.">
+  <title>BuildTech - Inicio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">BUILDTECH</a>
+      <nav class="header__nav" id="main-nav">
+        <a href="index.html" class="header__nav-link active">HOME</a>
+        <a href="catalogo.html" class="header__nav-link">CATÁLOGO</a>
+        <a href="favoritos.html" class="header__nav-link">FAVORITOS</a>
+        <a href="contacto.html" class="header__nav-link">CONTACTO</a>
+        <a href="#" class="header__nav-link">BLOG</a>
+      </nav>
+      <div class="header__actions">
+        <a href="favoritos.html" class="header__fav-link" aria-label="Ver favoritos">
+          <svg class="header__fav-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="header__fav-badge" id="fav-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero-section">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <h1 class="hero__title">AQUÍ ELIGES LOS<br>MEJORES COMPONENTES</h1>
+      <div class="hero__buttons">
+        <a href="catalogo.html" class="btn btn--white">VER CATALOGO</a>
+        <a href="contacto.html" class="btn btn--ghost">CONTACTANOS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMPONENTES CAROUSEL ========== -->
+  <section class="components" id="components-section">
+    <div class="container">
+      <div class="components__header">
+        <h2 class="section-title">COMPONENTES</h2>
+        <div class="components__nav">
+          <button class="components__arrow components__arrow--prev" id="carousel-prev" aria-label="Anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="components__arrow components__arrow--next" id="carousel-next" aria-label="Siguiente">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="components__carousel" id="carousel-track">
+        <!-- Cards rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HELP / CTA SECTION ========== -->
+  <section class="help" id="help-section">
+    <div class="help__content container">
+      <div class="help__text fade-in">
+        <h2 class="help__title">TE AYUDAMOS<br>A ELEGIR LO MEJOR</h2>
+        <p class="help__description">Puedes encontrar el listado de todos los componentes que necesitas para armar tu equipo de computo.</p>
+        <a href="catalogo.html" class="btn btn--white">VER CATALOGO</a>
+      </div>
+      <div class="help__image fade-in">
+        <div class="help__chip-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="60" height="60" rx="4" fill="none" stroke="white" stroke-width="2"/>
+            <rect x="30" y="30" width="40" height="40" rx="2" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+            <!-- Pins -->
+            <line x1="35" y1="20" x2="35" y2="10" stroke="white" stroke-width="2"/>
+            <line x1="50" y1="20" x2="50" y2="10" stroke="white" stroke-width="2"/>
+            <line x1="65" y1="20" x2="65" y2="10" stroke="white" stroke-width="2"/>
+            <line x1="35" y1="80" x2="35" y2="90" stroke="white" stroke-width="2"/>
+            <line x1="50" y1="80" x2="50" y2="90" stroke="white" stroke-width="2"/>
+            <line x1="65" y1="80" x2="65" y2="90" stroke="white" stroke-width="2"/>
+            <line x1="20" y1="35" x2="10" y2="35" stroke="white" stroke-width="2"/>
+            <line x1="20" y1="50" x2="10" y2="50" stroke="white" stroke-width="2"/>
+            <line x1="20" y1="65" x2="10" y2="65" stroke="white" stroke-width="2"/>
+            <line x1="80" y1="35" x2="90" y2="35" stroke="white" stroke-width="2"/>
+            <line x1="80" y1="50" x2="90" y2="50" stroke="white" stroke-width="2"/>
+            <line x1="80" y1="65" x2="90" y2="65" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== USER SETUPS ========== -->
+  <section class="setups" id="setups-section">
+    <div class="container">
+      <h2 class="section-title fade-in">EQUIPOS MONTADOS POR OTROS USUARIOS</h2>
+      <div class="setups__grid fade-in">
+        <!-- Main Card -->
+        <div class="setups__card setups__card--main">
+          <div class="setups__card-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e);"></div>
+          <div class="setups__card-content">
+            <span class="setups__card-badge">¡PC GAMER ÉPICO!</span>
+            <p class="setups__card-user">por <strong>JORGE</strong></p>
+            <p class="setups__card-desc">PC Gamer para alcanzar 120fps a 4K</p>
+            <a href="catalogo.html" class="setups__card-link">VER COMPONENTES</a>
+          </div>
+        </div>
+        <!-- Side Cards -->
+        <div class="setups__card setups__card--sm setups__card--top">
+          <div class="setups__card-img" style="background: linear-gradient(135deg, #0f3460, #533483);"></div>
+          <div class="setups__card-overlay">
+            <span>¡MI NUEVO SETUP GAMER!</span>
+          </div>
+        </div>
+        <div class="setups__card setups__card--sm setups__card--bottom-left">
+          <div class="setups__card-img" style="background: linear-gradient(135deg, #2c3333, #395B64);"></div>
+        </div>
+        <div class="setups__card setups__card--sm setups__card--bottom-right">
+          <div class="setups__card-img setups__card-img--brand" style="background: #000;">
+            <div class="setups__brand">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                <rect x="20" y="20" width="60" height="60" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+                <rect x="30" y="30" width="40" height="40" rx="2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+              </svg>
+              <span>BUILDTECH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__brand">
+        <span class="footer__logo">BUILDTECH</span>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">HOME</h4>
+        <a href="catalogo.html" class="footer__link">Catálogo</a>
+        <a href="favoritos.html" class="footer__link">Favoritos</a>
+        <a href="contacto.html" class="footer__link">Contacto</a>
+        <a href="#" class="footer__link">Blog</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">DESARROLLADORES</h4>
+        <span class="footer__link">Junior Mosquera</span>
+        <span class="footer__link">Samuel</span>
+        <span class="footer__link">Daniel</span>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__section-title">TECNOLOGIAS</h4>
+        <span class="footer__link">HTML5</span>
+        <span class="footer__link">Angular</span>
+        <span class="footer__link">LocalStorage</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+</html>
