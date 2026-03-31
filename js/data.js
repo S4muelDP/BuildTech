@@ -40,7 +40,7 @@ const PRODUCTS = [
     spec: "24 NÚCLEOS / 3.7GHZ",
     price: 2499.00,
     cores: 24,
-    threads: 32,
+    threads: 12,
     clock: "3.7 Ghz",
     description: "Alto rendimiento para gaming y productividad avanzada. Arquitectura con IA incorporada que transforma tu experiencia computacional.",
     fullDescription: "El Intel Core Ultra 9 es el procesador más avanzado de Intel, diseñado para ofrecer potencia extrema con inteligencia artificial integrada. Con 24 núcleos y 32 hilos, combina P-cores de alto rendimiento con E-cores eficientes para una experiencia óptima en cualquier escenario. Sus gráficos mejorados y eficiencia energética optimizada lo hacen ideal para multitarea fluida, gaming en 4K y creación de contenido profesional.",

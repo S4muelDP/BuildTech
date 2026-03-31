@@ -10,6 +10,7 @@
 .favorites__title {
   font-size: 3.2rem;
   font-weight: var(--fw-black);
+  font-style: italic;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 40px;
