@@ -33,25 +33,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: 
-    linear-gradient(135deg, 
-      rgba(180, 60, 20, 0.4) 0%, 
-      rgba(120, 40, 10, 0.6) 30%,
-      rgba(30, 15, 5, 0.85) 60%,
-      rgba(0, 0, 0, 0.95) 100%
-    ),
-    linear-gradient(45deg, #1a0a02, #2d1206, #0d0502);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.hero__overlay {
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(ellipse at 30% 50%, rgba(255, 120, 40, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 30%, rgba(200, 60, 20, 0.1) 0%, transparent 50%);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
 
@@ -200,27 +191,18 @@
 }
 
 .help__image {
-  flex: 0 0 auto;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.help__chip-icon {
-  width: 200px;
-  height: 200px;
-  opacity: 0.6;
-  animation: chipFloat 4s ease-in-out infinite;
-}
-
-@keyframes chipFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-.help__chip-icon svg {
+.help__img {
   width: 100%;
-  height: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 /* ---- USER SETUPS ---- */
@@ -348,5 +330,5 @@
 
 .setups__card--bottom-left,
 .setups__card--bottom-right {
-  /* These fill the remaining grid cells */
+  overflow: hidden;
 }
