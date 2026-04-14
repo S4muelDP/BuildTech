@@ -111,43 +111,6 @@ Este proyecto integra los siguientes conceptos vistos en la asignatura:
 - **Escenario 3 — CSS:** Separación de la presentación (archivos `.css` externos), uso de selectores, variables CSS (`--custom-properties`), Flexbox, CSS Grid, transiciones y animaciones con `@keyframes`.
 - **Escenario 4 — JavaScript:** Manipulación del DOM, eventos, funciones, arreglos de objetos, `localStorage`, `URLSearchParams`, `IntersectionObserver` y renderizado dinámico de contenido.
 
----
-
-## ▶️ ¿Cómo Ejecutar el Proyecto?
-
-Este proyecto **no requiere instalación de software adicional**. Para visualizarlo:
-
-### Opción 1: Abrir directamente en el navegador
-1. Descarga o clona este repositorio.
-2. Abre el archivo `index.html` con cualquier navegador web (Chrome, Firefox, Edge, etc.).
-
-### Opción 2: Usando un servidor local (recomendado)
-Si tienes Node.js instalado, puedes usar un servidor estático para una mejor experiencia:
-
-```bash
-# Clona el repositorio
-git clone https://github.com/S4muelDP/BuildTech.git
-
-# Entra al directorio
-cd BuildTech
-
-# Inicia un servidor local
-npx serve .
-```
-
-Luego abre `http://localhost:3000` en tu navegador.
-
----
-
-## 📝 Entregables Académicos
-
-| Entrega | Semana | Descripción |
-|---------|--------|-------------|
-| Entrega Previa 1 | Semana 3 | Propuesta de la aplicación web con mockups en Figma |
-| **Entrega Previa 2** | **Semana 5** | **Implementación de las páginas con HTML, CSS y JavaScript** |
-
----
-
 ## 📄 Licencia
 
 Proyecto académico desarrollado con fines educativos para el Politécnico Grancolombiano. Todos los derechos reservados © 2026.

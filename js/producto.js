@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Producto Detail JS
+   Detalle de Producto
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,7 +11,7 @@ function loadProductDetail() {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get('id');
 
-  // Default to product ID 3 (Intel Core Ultra 9) if none specified
+  // Usar el producto con ID 3 en caso de que no se especifique
   const product = productId ? getProductById(productId) : getProductById(3);
 
   if (!product) {
@@ -25,10 +25,10 @@ function loadProductDetail() {
     return;
   }
 
-  // Update page title
+  // Actualizar el título de la página
   document.title = `BuildTech - ${product.name}`;
 
-  // Update product info
+  // Actualizar la información del producto
   document.getElementById('product-image').src = product.image;
   document.getElementById('product-image').alt = product.name;
   document.getElementById('product-image').setAttribute('data-product-name', product.name);
@@ -37,7 +37,7 @@ function loadProductDetail() {
   document.getElementById('product-price').textContent = `$${product.price.toLocaleString('en-US', { minimumFractionDigits: 2 })} Aprox`;
   document.getElementById('product-desc').textContent = product.description;
 
-  // Update specs (only show if processor-like specs exist)
+  // Actualizar especificaciones (solo si existen)
   const specsSection = document.getElementById('product-specs');
   if (product.cores && product.threads && product.clock) {
     document.getElementById('spec-cores').textContent = `${product.cores} Núcleos`;
@@ -47,11 +47,11 @@ function loadProductDetail() {
     specsSection.style.display = 'none';
   }
 
-  // Update tab content
+  // Actualizar contenido de las pestañas
   document.getElementById('tab-description').textContent = product.fullDescription || product.description;
   document.getElementById('tab-info-tecnica').textContent = product.fullDescription || product.description;
 
-  // Spec table in tab
+  // Tabla de especificaciones en la pestaña
   const specTable = document.getElementById('spec-table');
   const specs = [];
   if (product.cores) specs.push({ label: 'Núcleos', value: `${product.cores} Núcleos` });
@@ -67,7 +67,7 @@ function loadProductDetail() {
     </div>
   `).join('');
 
-  // Favorites button
+  // Boton de Favoritos
   const favBtn = document.getElementById('add-fav-btn');
   updateFavButton(favBtn, product);
 
@@ -101,11 +101,11 @@ function initTabs() {
     tab.addEventListener('click', () => {
       const targetTab = tab.dataset.tab;
 
-      // Update active tab
+      // Actualizar Pestaña Activa
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      // Update active panel
+      // Actualizar el panel activo
       panels.forEach(p => p.classList.remove('active'));
       const targetPanel = document.getElementById(`panel-${targetTab}`);
       if (targetPanel) targetPanel.classList.add('active');

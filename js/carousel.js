@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Carousel JS
+   Carrusel
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,10 +13,10 @@ function initCarousel() {
 
   if (!track) return;
 
-  // Featured products for the carousel (first 6)
+  // Productos destacados para el carrusel
   const featured = PRODUCTS.slice(0, 6);
 
-  // Render cards
+  // Renderizar cards
   featured.forEach(product => {
     const card = createCarouselCard(product);
     track.appendChild(card);
@@ -44,7 +44,7 @@ function initCarousel() {
     updateCarousel();
   });
 
-  // Add smooth transition
+  // Agrega transición suave
   track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
 }
 
