@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Main JavaScript (Shared)
+   Main JavaScript
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   updateFavBadge();
 });
 
-/* ---- Set Active Nav Link ---- */
+/* ---- Establecer enlace activo del menú de navegación ---- */
 function setActiveNavLink() {
   const rawPage = window.location.pathname.split('/').pop() || '';
-  // Normalize: ensure .html extension (some servers strip it)
+  // Normalizar: asegurar que tenga extensión .html
   const currentPage = rawPage === '' ? 'index.html' : (rawPage.endsWith('.html') ? rawPage : rawPage + '.html');
   const navLinks = document.querySelectorAll('.header__nav-link');
 
@@ -34,7 +34,7 @@ function setActiveNavLink() {
   });
 }
 
-/* ---- Scroll Animations (Intersection Observer) ---- */
+/* ---- Animaciones al hacer scroll ---- */
 function initScrollAnimations() {
   const elements = document.querySelectorAll('.fade-in');
   if (elements.length === 0) return;
@@ -54,7 +54,7 @@ function initScrollAnimations() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ---- Favorites Helper Functions ---- */
+/* ---- Funciones auxiliares para favoritos ---- */
 function getFavorites() {
   const favs = localStorage.getItem('buildtech_favorites');
   return favs ? JSON.parse(favs) : [];
@@ -103,7 +103,7 @@ function updateFavBadge() {
   }
 }
 
-/* ---- Product Image Placeholder ---- */
+/* ---- Imagen de reemplazo para producto ---- */
 function generatePlaceholder(name, width = 300, height = 300) {
   const colors = [
     '#1a1a2e', '#16213e', '#0f3460', '#533483',
@@ -139,14 +139,14 @@ function escapeHTML(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-/* ---- Handle Image Loading Errors ---- */
+/* ---- Manejo de errores al cargar imagenes ---- */
 function handleImageError(img) {
   const name = img.getAttribute('data-product-name') || 'Producto';
   img.src = generatePlaceholder(name);
   img.onerror = null;
 }
 
-/* ---- Toast Notification ---- */
+/* ---- Mensajes Flotantes ---- */
 function showToast(message, type = 'success') {
   const existing = document.querySelector('.toast');
   if (existing) existing.remove();
@@ -158,7 +158,7 @@ function showToast(message, type = 'success') {
     <span class="toast__message">${message}</span>
   `;
 
-  // Toast styles
+  // Estilo de Mensajes Flotantes
   Object.assign(toast.style, {
     position: 'fixed',
     bottom: '30px',

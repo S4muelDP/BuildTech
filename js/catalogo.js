@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Catálogo JS
+   Catálogo
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +16,7 @@ function initCatalog() {
 
   let activeCategory = 'procesadores';
 
-  // Render categories
+  // Renderizar categorias
   CATEGORIES.forEach(cat => {
     const li = document.createElement('li');
     li.className = `catalog__category${cat.id === activeCategory ? ' active' : ''}`;
@@ -42,11 +42,11 @@ function initCatalog() {
     const products = getProductsByCategory(activeCategory);
     const categoryLabel = CATEGORIES.find(c => c.id === activeCategory)?.label || activeCategory.toUpperCase();
 
-    // Update title and counter
+    // Actualizar titulo y contador
     catalogTitle.textContent = categoryLabel;
     catalogCounter.textContent = `${products.length} ITEMS CARGADOS / ${categoryLabel}`;
 
-    // Clear grid
+    // Limpiar Grid
     productsGrid.innerHTML = '';
 
     if (products.length === 0) {
@@ -59,7 +59,7 @@ function initCatalog() {
       return;
     }
 
-    // Render products
+    // Renderizar productos
     products.forEach((product, index) => {
       const card = createProductCard(product);
       card.style.animationDelay = `${index * 0.08}s`;
@@ -68,7 +68,7 @@ function initCatalog() {
     });
   }
 
-  // Initial render
+  // Render Inicial
   renderProducts();
 }
 
@@ -95,7 +95,7 @@ function createProductCard(product) {
   return card;
 }
 
-/* Card entrance animation */
+/* Animación de Entrada de Card */
 const style = document.createElement('style');
 style.textContent = `
   @keyframes catalogCardEnter {

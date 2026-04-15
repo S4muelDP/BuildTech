@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Contacto JS (Form Validation)
+   Contacto - Validación de Formulario
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,7 +37,7 @@ function initContactForm() {
     }
   };
 
-  // Real-time validation on blur
+  // Validación en Tiempo Real
   Object.values(fields).forEach(field => {
     field.input.addEventListener('blur', () => {
       validateField(field);
@@ -50,7 +50,7 @@ function initContactForm() {
     });
   });
 
-  // Submit handler
+  // Manejador del envío del formulario
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -62,7 +62,7 @@ function initContactForm() {
     });
 
     if (isValid) {
-      // Show success state
+      // Mostrar estado exitoso
       const formContainer = form.parentElement;
       form.innerHTML = `
         <div class="contact__success">

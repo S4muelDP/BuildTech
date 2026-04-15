@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Producto Detail Page Styles
+   Estilos de Detalle de Producto
    ============================================ */
 
 /* ---- Hero Section ---- */
@@ -15,7 +15,7 @@
   margin-bottom: 40px;
 }
 
-/* ---- Product Image ---- */
+/* ---- Imagen de Producto ---- */
 .product-detail__image-wrapper {
   background-color: var(--color-white);
   aspect-ratio: 1 / 1;

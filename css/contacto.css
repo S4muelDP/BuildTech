@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Contacto Page Styles
+   Estilos de Página de Contacto
    ============================================ */
 
 .contact {
@@ -39,7 +39,7 @@
   align-items: start;
 }
 
-/* ---- Form ---- */
+/* ---- Formulario ---- */
 .contact__form {
   display: flex;
   flex-direction: column;
@@ -127,7 +127,7 @@
   margin-bottom: 20px;
 }
 
-/* Location Items */
+/* Items de Ubicación */
 .contact__location {
   display: flex;
   justify-content: space-between;
@@ -150,7 +150,7 @@
   letter-spacing: 0.5px;
 }
 
-/* Social Icons */
+/* Iconos Redes Sociales */
 .contact__social {
   display: flex;
   gap: 16px;
@@ -180,7 +180,7 @@
   opacity: 1;
 }
 
-/* ---- Success State ---- */
+/* ---- Estado Exitoso ---- */
 .contact__success {
   text-align: center;
   padding: 60px 20px;

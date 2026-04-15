@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Product Data
+   Datos de Productos
    ============================================ */
 
 const PRODUCTS = [
@@ -265,7 +265,7 @@ const PRODUCTS = [
   }
 ];
 
-/* Category mapping for the sidebar */
+/* Mapeo de Categoría para el sidebar */
 const CATEGORIES = [
   { id: "procesadores", label: "PROCESADORES" },
   { id: "boards", label: "BOARDS" },
@@ -277,12 +277,12 @@ const CATEGORIES = [
   { id: "fans", label: "FANS" }
 ];
 
-/* Get products by category */
+/* Obtener productos por categoría */
 function getProductsByCategory(categoryId) {
   return PRODUCTS.filter(p => p.category === categoryId);
 }
 
-/* Get product by ID */
+/* Obtener productos por ID */
 function getProductById(id) {
   return PRODUCTS.find(p => p.id === parseInt(id));
 }

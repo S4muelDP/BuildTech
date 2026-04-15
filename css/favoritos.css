@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Favoritos Page Styles
+   Estilos de Página de Favoritos
    ============================================ */
 
 .favorites {
@@ -115,7 +115,7 @@
   transform: translateY(-2px);
 }
 
-/* ---- Empty State ---- */
+/* ---- Estado Vacío ---- */
 .favorites__empty {
   grid-column: 1 / -1;
   text-align: center;
@@ -144,7 +144,7 @@
   letter-spacing: 0.5px;
 }
 
-/* ---- Card Remove Animation ---- */
+/* ---- Animación de Eliminación de Card ---- */
 .fav-card--removing {
   animation: cardRemove 0.4s ease forwards;
 }
@@ -156,7 +156,7 @@
   }
 }
 
-/* ---- Card Enter Animation ---- */
+/* ---- Animación de Ingreso a Card ---- */
 .fav-card--enter {
   animation: cardEnter 0.4s ease both;
 }

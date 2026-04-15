@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Catálogo Page Styles
+   Estilos de Página de Catálogo
    ============================================ */
 
 /* ---- Layout ---- */
@@ -125,12 +125,12 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ---- Product Card Tweaks for Catalog ---- */
+/* ---- Ajustes para las tarjetas de producto en el catálogo ---- */
 .catalog__grid .product-card {
   min-width: unset;
 }
 
-/* ---- No Results ---- */
+/* ---- Sin resultados ---- */
 .catalog__empty {
   grid-column: 1 / -1;
   text-align: center;

@@ -1,8 +1,8 @@
 /* ============================================
-   BUILDTECH - Inicio Page Styles
+   Estilos de Página de Inicio
    ============================================ */
 
-/* ---- Fav Badge ---- */
+/* ---- Ícono de Favoritos ---- */
 .header__fav-link {
   position: relative;
   display: flex;
@@ -94,7 +94,7 @@
   }
 }
 
-/* ---- COMPONENTS CAROUSEL ---- */
+/* ---- Carrusel de Componentes ---- */
 .components {
   padding: 80px 0;
 }
@@ -150,7 +150,7 @@
   scroll-snap-align: start;
 }
 
-/* ---- HELP / CTA ---- */
+/* ---- Sección de Ayuda ---- */
 .help {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
   padding: 100px 0;

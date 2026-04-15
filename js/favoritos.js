@@ -1,5 +1,5 @@
 /* ============================================
-   BUILDTECH - Favoritos JS
+   Favoritos
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
