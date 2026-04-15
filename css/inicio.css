@@ -131,14 +131,23 @@
 
 .components__carousel {
   display: flex;
+  align-items: flex-start;
   gap: 24px;
-  overflow: hidden;
+  overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.components__carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .components__carousel .product-card {
   min-width: calc(33.333% - 16px);
   flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 /* ---- Sección de Ayuda ---- */

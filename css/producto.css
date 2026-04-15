@@ -17,7 +17,7 @@
 
 /* ---- Imagen de Producto ---- */
 .product-detail__image-wrapper {
-  background-color: var(--color-gray-light);
+  background-color: var(--color-white);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;

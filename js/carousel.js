@@ -22,30 +22,22 @@ function initCarousel() {
     track.appendChild(card);
   });
 
-  let currentIndex = 0;
-  const itemsVisible = 3;
-  const totalItems = featured.length;
-
-  function updateCarousel() {
-    const cardWidth = track.children[0]?.offsetWidth || 300;
-    const gap = 24;
-    const offset = currentIndex * (cardWidth + gap);
-    track.style.transform = `translateX(-${offset}px)`;
+  // Calculate scroll amount (one full page = 3 cards)
+  function getScrollAmount() {
+    const card = track.children[0];
+    if (!card) return 300;
+    const style = window.getComputedStyle(track);
+    const gap = parseInt(style.gap) || 24;
+    return (card.offsetWidth + gap) * 3;
   }
 
   prevBtn?.addEventListener('click', () => {
-    currentIndex = Math.max(0, currentIndex - 1);
-    updateCarousel();
+    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
 
   nextBtn?.addEventListener('click', () => {
-    const maxIndex = Math.max(0, totalItems - itemsVisible);
-    currentIndex = Math.min(maxIndex, currentIndex + 1);
-    updateCarousel();
+    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
-
-  // Agrega transición suave
-  track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
 }
 
 function createCarouselCard(product) {
