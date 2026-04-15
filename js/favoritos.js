@@ -61,16 +61,29 @@ function createFavCard(product) {
 }
 
 function removeFavItem(productId) {
-  const card = document.getElementById(`fav-card-${productId}`);
-  
+  const id = parseInt(productId);
+  const card = document.getElementById(`fav-card-${id}`);
+
   if (card) {
     card.classList.add('fav-card--removing');
-    card.addEventListener('animationend', () => {
-      removeFromFavorites(productId);
+
+    let removed = false;
+    const doRemove = () => {
+      if (removed) return;
+      removed = true;
+      removeFromFavorites(id);
       renderFavorites();
-    });
+      updateFavBadge();
+      showToast('Producto eliminado de favoritos');
+    };
+
+    card.addEventListener('animationend', doRemove, { once: true });
+    // animacion nunca se ejecuta
+    setTimeout(doRemove, 500);
   } else {
-    removeFromFavorites(productId);
+    removeFromFavorites(id);
     renderFavorites();
+    updateFavBadge();
+    showToast('Producto eliminado de favoritos');
   }
 }

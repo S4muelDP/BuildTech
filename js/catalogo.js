@@ -76,8 +76,18 @@ function createProductCard(product) {
   const card = document.createElement('div');
   card.className = 'product-card';
 
+  const isFav = isFavorite(product.id);
+
   card.innerHTML = `
     <div class="product-card__image-wrapper">
+      <button class="product-card__fav-btn ${isFav ? 'active' : ''}" 
+              data-product-id="${product.id}" 
+              aria-label="Agregar a favoritos"
+              onclick="toggleCatalogFavorite(event, ${product.id})">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
       <img src="${product.image}" 
            alt="${product.name}" 
            data-product-name="${product.name}"
@@ -93,6 +103,29 @@ function createProductCard(product) {
   `;
 
   return card;
+}
+
+/* Toggle favorito desde el catálogo */
+function toggleCatalogFavorite(event, productId) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  const product = getProductById(productId);
+  if (!product) return;
+
+  const btn = event.currentTarget;
+
+  if (isFavorite(productId)) {
+    removeFromFavorites(productId);
+    btn.classList.remove('active');
+    showToast('Producto eliminado de favoritos');
+  } else {
+    addToFavorites(product);
+    btn.classList.add('active');
+    showToast('Producto agregado a favoritos ♡');
+  }
+
+  updateFavBadge();
 }
 
 /* Animación de Entrada de Card */

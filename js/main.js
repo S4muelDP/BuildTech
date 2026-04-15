@@ -67,9 +67,10 @@ function saveFavorites(favs) {
 
 function addToFavorites(product) {
   const favs = getFavorites();
-  if (!favs.find(f => f.id === product.id)) {
+  const id = parseInt(product.id);
+  if (!favs.find(f => parseInt(f.id) === id)) {
     favs.push({
-      id: product.id,
+      id: id,
       name: product.name,
       price: product.price,
       category: product.category,
@@ -84,14 +85,16 @@ function addToFavorites(product) {
 }
 
 function removeFromFavorites(productId) {
+  const id = parseInt(productId);
   let favs = getFavorites();
-  favs = favs.filter(f => f.id !== productId);
+  favs = favs.filter(f => parseInt(f.id) !== id);
   saveFavorites(favs);
 }
 
 function isFavorite(productId) {
+  const id = parseInt(productId);
   const favs = getFavorites();
-  return favs.some(f => f.id === productId);
+  return favs.some(f => parseInt(f.id) === id);
 }
 
 function updateFavBadge() {
