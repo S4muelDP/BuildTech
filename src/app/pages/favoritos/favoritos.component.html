@@ -1,0 +1,21 @@
+<main class="favorites" id="favorites">
+  <div class="container">
+    <h1 class="favorites__title">FAVORITOS</h1>
+    <div class="favorites__grid">
+      @if (favorites.length === 0) {
+        <div class="favorites__empty">
+          <div class="favorites__empty-icon">♡</div>
+          <h2 class="favorites__empty-title">Sin favoritos</h2>
+          <p class="favorites__empty-text">Aún no has agregado componentes a tu lista de favoritos.</p>
+          <a routerLink="/catalogo" class="btn btn--primary">EXPLORAR CATÁLOGO</a>
+        </div>
+      } @else {
+        @for (product of favorites; track product.id; let i = $index) {
+          <app-product-card [product]="product" variant="favorite"
+                            [style.animation-delay]="i * 0.08 + 's'"
+                            class="fav-card--enter"></app-product-card>
+        }
+      }
+    </div>
+  </div>
+</main>

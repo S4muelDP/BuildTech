@@ -1,116 +1,135 @@
-# 🖥️ BuildTech — Catálogo de Componentes de PC
+# 🖥️ BuildTech — Componentes de PC
 
-<div align="center">
+## 📋 Descripción
 
-**Proyecto académico de Desarrollo Front-End**
-
-*Institución Universitaria Politécnico Grancolombiano*  
-*Facultad de Ingeniería, Diseño e Innovación*  
-*Bogotá, Colombia — 2026*
-
-</div>
+**BuildTech** es una aplicación web SPA (Single Page Application) construida con **Angular 19** que permite explorar, filtrar y gestionar componentes de PC. Los usuarios pueden navegar por un catálogo de productos, ver detalles técnicos, guardar favoritos con persistencia local y enviar consultas a través de un formulario de contacto con validación reactiva.
 
 ---
 
-## 📋 Descripción del Proyecto
+## 🛠️ Stack Tecnológico
 
-**BuildTech** es una aplicación web tipo catálogo diseñada para explorar y gestionar componentes de PC (procesadores, boards, memorias RAM, almacenamiento, refrigeración, fuentes de poder, chasis y ventiladores). El sitio permite a los usuarios navegar por un catálogo organizado por categorías, ver el detalle técnico de cada producto, guardar sus componentes favoritos y contactar al equipo de soporte.
-
-Este proyecto fue desarrollado como parte de la asignatura de **Front-End**, aplicando los conocimientos adquiridos en los módulos de **HTML5**, **CSS3** y **JavaScript**.
-
----
-
-## 👥 Equipo de Desarrollo
-
-| Nombre | Rol |
-|--------|-----|
-| Junior Mosquera Mosquera | Desarrollador |
-| Daniel Alfonzo González Pérez | Desarrollador |
-| Georgette Garzón Burgos | Desarrollador |
-| Samuel Duque Porras | Desarrollador |
-
-**Docente:** Edgar Mauricio López Rojas
+| Tecnología    | Versión / Detalle                  |
+| ------------- | ---------------------------------- |
+| **Framework** | Angular 19 (Standalone Components) |
+| **Lenguaje**  | TypeScript 5.x                     |
+| **Estilos**   | CSS3 (Variables + BEM)             |
+| **Fuente**    | Google Fonts — Montserrat          |
+| **Estado**    | RxJS BehaviorSubject / Subject     |
+| **Storage**   | LocalStorage (favoritos)           |
+| **Build**     | Angular CLI + Vite                 |
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 BuildTech/
-│
-├── index.html              → Página de inicio (Home)
-├── catalogo.html           → Catálogo de productos
-├── producto.html           → Vista de detalle de un producto
-├── favoritos.html          → Lista de productos favoritos
-├── contacto.html           → Formulario de contacto
-│
-├── css/
-│   ├── styles.css          → Estilos globales y sistema de diseño
-│   ├── inicio.css          → Estilos específicos de la página de inicio
-│   ├── catalogo.css        → Estilos del catálogo
-│   ├── producto.css        → Estilos del detalle de producto
-│   ├── favoritos.css       → Estilos de la página de favoritos
-│   └── contacto.css        → Estilos de la página de contacto
-│
-├── js/
-│   ├── main.js             → Funciones compartidas (navegación, favoritos, utilidades)
-│   ├── data.js             → Base de datos de productos (estructura tipo JSON)
-│   ├── carousel.js         → Lógica del carrusel de la página de inicio
-│   ├── catalogo.js         → Filtrado por categorías y renderizado de productos
-│   ├── producto.js         → Carga dinámica del detalle y sistema de tabs
-│   ├── favoritos.js        → Gestión de favoritos con LocalStorage
-│   └── contacto.js         → Validación del formulario de contacto
-│
-└── assets/
-    └── img/                → Imágenes del proyecto (formato .webp)
-        ├── products/       → Imágenes de los productos
-        ├── hero/           → Imagen del banner principal
-        ├── setups/         → Fotos de builds de usuarios
-        └── icons/          → Íconos e ilustraciones
+├── src/
+│   ├── app/
+│   │   ├── components/          # Componentes compartidos
+│   │   │   ├── header/          # Navbar con badge de favoritos
+│   │   │   ├── footer/          # Footer global
+│   │   │   ├── product-card/    # Card reutilizable (3 variantes)
+│   │   │   └── toast/           # Notificaciones animadas
+│   │   ├── models/              # Interfaces TypeScript
+│   │   │   ├── product.model.ts
+│   │   │   └── category.model.ts
+│   │   ├── pages/               # Componentes de página
+│   │   │   ├── home/            # Página principal con Hero + Carousel
+│   │   │   ├── catalogo/        # Catálogo con filtro por categorías
+│   │   │   ├── producto/        # Detalle de producto con pestañas
+│   │   │   ├── favoritos/       # Lista de favoritos reactiva
+│   │   │   ├── contacto/        # Formulario con Reactive Forms
+│   │   │   └── blog/            # Sección blog (próximamente)
+│   │   ├── services/            # Servicios inyectables
+│   │   │   ├── product.service.ts
+│   │   │   ├── favorites.service.ts
+│   │   │   └── toast.service.ts
+│   │   ├── app.ts               # Componente raíz
+│   │   ├── app.html             # Template raíz (Header + Router + Footer)
+│   │   ├── app.config.ts        # Configuración de providers
+│   │   └── app.routes.ts        # Definición de rutas
+│   ├── styles.css               # Estilos globales (variables, reset, BEM)
+│   ├── index.html               # HTML entry point
+│   └── main.ts                  # Bootstrap de la aplicación
+├── public/                      # Assets estáticos (imágenes)
+├── angular.json                 # Configuración Angular CLI
+├── tsconfig.json                # Configuración TypeScript
+└── package.json                 # Dependencias
 ```
 
 ---
 
-## 🚀 Páginas del Sitio
+## 🚀 Instalación y Ejecución
 
-### 1. Inicio (`index.html`)
-Página principal con un **banner hero** de impacto visual, un **carrusel de componentes destacados** con navegación por flechas, una sección informativa que invita al usuario a explorar el catálogo y un grid con **builds montados por otros usuarios** a modo de comunidad.
+### Prerrequisitos
 
-### 2. Catálogo (`catalogo.html`)
-Muestra el inventario completo de productos organizado por **8 categorías**: Procesadores, Boards, Memorias RAM, Almacenamiento, Refrigeración, Fuentes de Poder, Chasis y Fans. Al hacer clic en una categoría del sidebar, el contenido se **filtra dinámicamente** sin recargar la página.
+- **Node.js** ≥ 18.x
+- **npm** ≥ 9.x
 
-### 3. Detalle de Producto (`producto.html`)
-Vista individual de cada componente con **imagen ampliada**, precio, descripción, especificaciones técnicas (núcleos, hilos, velocidad de reloj) y un sistema de **pestañas (tabs)** para alternar entre Especificaciones, Descripción e Información Técnica. Incluye el botón **"Agregar a Favoritos"**.
+### Pasos
 
-### 4. Favoritos (`favoritos.html`)
-Lista personalizada de los productos que el usuario ha guardado. Los datos se **persisten con LocalStorage**, por lo que sobreviven al cierre del navegador. Cada producto puede ser eliminado individualmente con animación visual.
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/S4muelDP/BuildTech.git
+cd BuildTech
 
-### 5. Contacto (`contacto.html`)
-Formulario con campos de Nombre, Email, Asunto (desplegable) y Mensaje, con **validación en tiempo real**. La barra lateral muestra las sedes de BuildTech (Medellín, Bogotá, Santa Marta) y enlaces a redes sociales.
+# 2. Instalar dependencias
+npm install
 
----
-
-## 🛠️ Tecnologías Utilizadas
-
-| Tecnología | Uso en el Proyecto |
-|------------|-------------------|
-| **HTML5** | Estructura semántica de todas las páginas |
-| **CSS3** | Estilos, animaciones, layouts con Grid y Flexbox |
-| **JavaScript (ES6+)** | Interactividad, manipulación del DOM, lógica de negocio |
-| **LocalStorage** | Persistencia de datos de favoritos en el navegador |
-| **Google Fonts** | Tipografía Montserrat para una estética moderna |
+# 3. Iniciar servidor de desarrollo
+npm start
+# → Disponible en http://localhost:4200/
+```
 
 ---
 
-## 📚 Conceptos Aplicados
+## 📄 Páginas y Rutas
 
-Este proyecto integra los siguientes conceptos vistos en la asignatura:
+| Ruta              | Página     | Descripción                              |
+| ----------------- | ---------- | ---------------------------------------- |
+| `/`               | Home       | Hero, carrusel de productos, setups      |
+| `/catalogo`       | Catálogo   | Grid de productos con filtro por categoría |
+| `/producto/:id`   | Producto   | Detalle con especificaciones y pestañas  |
+| `/favoritos`      | Favoritos  | Lista reactiva con persistencia local    |
+| `/contacto`       | Contacto   | Formulario con validación reactiva       |
+| `/blog`           | Blog       | Sección en construcción                  |
 
-- **Escenario 1 — Desarrollo Web:** Comprensión del modelo cliente-servidor y protocolo HTTP.
-- **Escenario 2 — HTML:** Estructura semántica con etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`, formularios y tablas.
-- **Escenario 3 — CSS:** Separación de la presentación (archivos `.css` externos), uso de selectores, variables CSS (`--custom-properties`), Flexbox, CSS Grid, transiciones y animaciones con `@keyframes`.
-- **Escenario 4 — JavaScript:** Manipulación del DOM, eventos, funciones, arreglos de objetos, `localStorage`, `URLSearchParams`, `IntersectionObserver` y renderizado dinámico de contenido.
+---
 
-## 📄 Licencia
+## 🧩 Arquitectura de Componentes
 
-Proyecto académico desarrollado con fines educativos para el Politécnico Grancolombiano. Todos los derechos reservados © 2026.
+### Standalone Components
+
+Todos los componentes utilizan la arquitectura **Standalone** de Angular 19 (sin NgModules):
+
+- **`HeaderComponent`** — Navbar con navegación activa y badge de favoritos reactivo
+- **`FooterComponent`** — Footer informativo con links de navegación
+- **`ProductCardComponent`** — Card reutilizable con 3 variantes: `catalog`, `carousel`, `favorite`
+- **`ToastComponent`** — Sistema de notificaciones animadas con auto-dismiss
+
+### Servicios
+
+- **`ProductService`** — Gestión del catálogo de productos y categorías
+- **`FavoritesService`** — Persistencia en LocalStorage con estado reactivo (BehaviorSubject)
+- **`ToastService`** — Emisor de notificaciones mediante RxJS Subject
+
+---
+
+## 🧑‍💻 Desarrolladores
+
+| Nombre            | Rol         |
+| ----------------- | ----------- |
+| Junior Mosquera   | Desarrollo  |
+| Samuel Duque      | Desarrollo  |
+| Daniel González   | Desarrollo  |
+| Georgette Garzón  | Desarrollo  |
+
+---
+
+## 📌 Notas
+
+- La aplicación utiliza **datos estáticos** embebidos en el `ProductService` (sin backend).
+- Los favoritos se persisten en `localStorage` bajo la clave `buildtech_favorites`.
+- Las imágenes de producto incluyen un **fallback SVG** generado dinámicamente si la imagen original no carga.
+- La migración se realizó desde una arquitectura estática HTML/CSS/JS hacia Angular SPA manteniendo paridad visual pixel-perfect.

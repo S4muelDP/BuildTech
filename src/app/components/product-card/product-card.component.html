@@ -1,0 +1,60 @@
+<!-- CATALOG variant -->
+@if (variant === 'catalog') {
+  <div class="product-card">
+    <div class="product-card__image-wrapper">
+      <button class="product-card__fav-btn" [class.active]="isFav"
+              (click)="toggleFavorite($event)" aria-label="Agregar a favoritos">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <img [src]="product.image"
+           [alt]="product.name"
+           (error)="handleImageError($event)"
+           loading="lazy">
+    </div>
+    <div class="product-card__info">
+      <h3 class="product-card__name">{{ product.name }}</h3>
+      <p class="product-card__spec">{{ product.spec || 'COMPONENTE' }}</p>
+      <p class="product-card__price">precio aprox ${{ formattedPrice }}</p>
+      <a class="product-card__btn btn btn--primary btn--sm" (click)="navigateToProduct()">VER PRODUCTO</a>
+    </div>
+  </div>
+}
+
+<!-- CAROUSEL variant -->
+@if (variant === 'carousel') {
+  <div class="product-card" (click)="navigateToProduct()" style="cursor: pointer">
+    <div class="product-card__image-wrapper">
+      <img [src]="product.image"
+           [alt]="product.name"
+           (error)="handleImageError($event)"
+           loading="lazy">
+    </div>
+    <div class="product-card__info">
+      <span class="product-card__spec">{{ product.categoryLabel }}</span>
+      <h3 class="product-card__name">{{ product.name }}</h3>
+      <p class="product-card__price">${{ product.price.toLocaleString('en-US', { minimumFractionDigits: 0 }) }} Aprox</p>
+    </div>
+  </div>
+}
+
+<!-- FAVORITE variant -->
+@if (variant === 'favorite') {
+  <div class="fav-card" [id]="'fav-card-' + product.id">
+    <div class="fav-card__image-wrapper" (click)="navigateToProduct()">
+      <img [src]="product.image"
+           [alt]="product.name"
+           (error)="handleImageError($event)"
+           loading="lazy">
+    </div>
+    <div class="fav-card__info">
+      <div class="fav-card__header">
+        <h3 class="fav-card__name">{{ product.name }}</h3>
+        <span class="fav-card__price">${{ formattedPrice }}</span>
+      </div>
+      <p class="fav-card__category">{{ product.categoryLabel }}</p>
+      <button class="fav-card__remove-btn" (click)="removeFavorite()">ELIMINAR DE LA LISTA</button>
+    </div>
+  </div>
+}

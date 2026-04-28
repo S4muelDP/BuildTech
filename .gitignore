@@ -1,14 +1,23 @@
-# Node modules
+# Dependencies
 node_modules/
 
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
+# Angular build output
+dist/
+.angular/
+tmp/
 
 # IDE
-.vscode/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
 .idea/
+*.swp
+*.swo
 
-# PDF source files (no needed in repo)
-*.pdf
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+npm-debug.log*

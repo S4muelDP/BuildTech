@@ -1,0 +1,9 @@
+@if (currentToast) {
+  <div class="toast" [class.toast--visible]="visible"
+       [class.toast--success]="currentToast.type === 'success'"
+       [class.toast--error]="currentToast.type === 'error'"
+       [class.toast--info]="currentToast.type === 'info'">
+    <span class="toast__icon">{{ icon }}</span>
+    <span class="toast__message">{{ currentToast.message }}</span>
+  </div>
+}
