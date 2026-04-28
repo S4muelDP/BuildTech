@@ -1,0 +1,39 @@
+<main class="catalog" id="catalog">
+  <div class="container catalog__layout">
+    <!-- Sidebar -->
+    <aside class="catalog__sidebar" id="catalog-sidebar">
+      <h3 class="catalog__sidebar-title">CATEGORÍAS</h3>
+      <ul class="catalog__categories">
+        @for (cat of categories; track cat.id) {
+          <li class="catalog__category"
+              [class.active]="cat.id === activeCategory"
+              (click)="selectCategory(cat)">
+            {{ cat.label }}
+          </li>
+        }
+      </ul>
+    </aside>
+
+    <!-- Products Grid -->
+    <section class="catalog__main">
+      <div class="catalog__header">
+        <h1 class="catalog__title section-title--xlarge">{{ activeCategoryLabel }}</h1>
+        <p class="catalog__counter">{{ products.length }} ITEMS CARGADOS / {{ activeCategoryLabel }}</p>
+      </div>
+      <div class="catalog__grid">
+        @if (products.length === 0) {
+          <div class="catalog__empty">
+            <div class="catalog__empty-icon">📦</div>
+            <p class="catalog__empty-text">No hay productos en esta categoría</p>
+          </div>
+        } @else {
+          @for (product of products; track product.id; let i = $index) {
+            <app-product-card [product]="product" variant="catalog"
+                              [style.animation-delay]="i * 0.08 + 's'"
+                              class="catalog-card-enter"></app-product-card>
+          }
+        }
+      </div>
+    </section>
+  </div>
+</main>

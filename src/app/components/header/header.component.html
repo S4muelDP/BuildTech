@@ -1,0 +1,22 @@
+<header class="header" id="header">
+  <div class="container">
+    <a routerLink="/" class="header__logo">BUILDTECH</a>
+    <nav class="header__nav" id="main-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__nav-link">HOME</a>
+      <a routerLink="/catalogo" routerLinkActive="active" class="header__nav-link">CATÁLOGO</a>
+      <a routerLink="/favoritos" routerLinkActive="active" class="header__nav-link">FAVORITOS</a>
+      <a routerLink="/contacto" routerLinkActive="active" class="header__nav-link">CONTACTO</a>
+      <a routerLink="/blog" routerLinkActive="active" class="header__nav-link">BLOG</a>
+    </nav>
+    <div class="header__actions">
+      <a routerLink="/favoritos" class="header__fav-link" aria-label="Ver favoritos">
+        <svg class="header__fav-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        @if (favCount > 0) {
+          <span class="header__fav-badge">{{ favCount }}</span>
+        }
+      </a>
+    </div>
+  </div>
+</header>

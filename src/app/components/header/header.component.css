@@ -1,0 +1,23 @@
+/* Header styles are defined in global styles.css */
+
+.header__fav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header__fav-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

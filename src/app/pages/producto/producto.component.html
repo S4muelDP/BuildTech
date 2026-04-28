@@ -1,0 +1,99 @@
+@if (notFound) {
+  <main class="product-detail">
+    <div class="container" style="padding: 100px 40px; text-align: center;">
+      <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 16px;">PRODUCTO NO ENCONTRADO</h2>
+      <p style="color: #999; margin-bottom: 24px;">El producto que buscas no existe.</p>
+      <a routerLink="/catalogo" class="btn btn--primary">IR AL CATÁLOGO</a>
+    </div>
+  </main>
+} @else if (product) {
+  <main class="product-detail" id="product-detail">
+    <div class="container">
+      <!-- SECCIÓN PRINCIPAL DE PRODUCTO -->
+      <section class="product-detail__hero">
+        <div class="product-detail__image-wrapper fade-in">
+          <img [src]="product.image"
+               [alt]="product.name"
+               (error)="handleImageError($event)">
+        </div>
+        <div class="product-detail__info fade-in">
+          <span class="product-detail__category">{{ product.categoryLabel }}</span>
+          <h1 class="product-detail__name">{{ product.name }}</h1>
+          <p class="product-detail__price">{{ formattedPrice }}</p>
+          <p class="product-detail__desc">{{ product.description }}</p>
+
+          <!-- ESPECIFICACIONES -->
+          @if (hasSpecs) {
+            <div class="product-detail__specs">
+              <div class="product-detail__spec-item">
+                <span class="product-detail__spec-label">Núcleos</span>
+                <span class="product-detail__spec-value">{{ product.cores }} Núcleos</span>
+              </div>
+              <div class="product-detail__spec-item">
+                <span class="product-detail__spec-label">Hilos</span>
+                <span class="product-detail__spec-value">{{ product.threads }} Hilos</span>
+              </div>
+              <div class="product-detail__spec-item">
+                <span class="product-detail__spec-label">Velocidad de reloj</span>
+                <span class="product-detail__spec-value">{{ product.clock }}</span>
+              </div>
+            </div>
+          }
+
+          <button class="btn btn--primary product-detail__fav-btn"
+                  [class.added]="isFav"
+                  (click)="toggleFavorite()">
+            {{ favBtnText }}
+          </button>
+        </div>
+      </section>
+
+      <!-- INDICADOR DE SCROLL -->
+      <div class="product-detail__scroll-indicator">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="2" width="12" height="20" rx="6" />
+          <line x1="12" y1="6" x2="12" y2="10" />
+        </svg>
+      </div>
+
+      <!-- SECCIÓN DE PESTAÑAS -->
+      <section class="product-detail__tabs-section fade-in">
+        <div class="product-detail__tabs-sidebar">
+          <button class="product-detail__tab" [class.active]="activeTab === 'especificaciones'" (click)="setTab('especificaciones')">ESPECIFICACIONES</button>
+          <button class="product-detail__tab" [class.active]="activeTab === 'descripcion'" (click)="setTab('descripcion')">DESCRIPCIÓN</button>
+          <button class="product-detail__tab" [class.active]="activeTab === 'info-tecnica'" (click)="setTab('info-tecnica')">INFORMACIÓN TÉCNICA</button>
+        </div>
+        <div class="product-detail__tabs-content">
+          <!-- Especificaciones -->
+          @if (activeTab === 'especificaciones') {
+            <div class="product-detail__tab-panel active">
+              <h2 class="product-detail__tab-title">ESPECIFICACIONES</h2>
+              <div class="product-detail__spec-table">
+                @for (spec of specRows; track spec.label) {
+                  <div class="product-detail__spec-row">
+                    <span class="product-detail__spec-row-label">{{ spec.label }}</span>
+                    <span class="product-detail__spec-row-value">{{ spec.value }}</span>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+          <!-- Descripción -->
+          @if (activeTab === 'descripcion') {
+            <div class="product-detail__tab-panel active">
+              <h2 class="product-detail__tab-title">DESCRIPCIÓN</h2>
+              <p class="product-detail__tab-text">{{ product.fullDescription || product.description }}</p>
+            </div>
+          }
+          <!-- Info Técnica -->
+          @if (activeTab === 'info-tecnica') {
+            <div class="product-detail__tab-panel active">
+              <h2 class="product-detail__tab-title">INFORMACIÓN TÉCNICA</h2>
+              <p class="product-detail__tab-text">{{ product.fullDescription || product.description }}</p>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  </main>
+}

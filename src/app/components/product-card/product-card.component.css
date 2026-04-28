@@ -1,0 +1,97 @@
+/* Product card styles are in global styles.css */
+
+/* Favorite card specific styles */
+.fav-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fav-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.fav-card__image-wrapper {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.fav-card__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fav-card__info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fav-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.fav-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fav-card__price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.fav-card__category {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.fav-card__remove-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.fav-card__remove-btn:hover {
+  color: #d32f2f;
+}
+
+@media (max-width: 600px) {
+  .fav-card {
+    grid-template-columns: 1fr;
+  }
+
+  .fav-card__image-wrapper {
+    aspect-ratio: 1;
+  }
+}
